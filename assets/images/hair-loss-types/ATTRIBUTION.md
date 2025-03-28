@@ -1,11 +1,23 @@
-# Image Attribution
+# Image Attributions
 
-Images are sourced from Wikimedia Commons under Creative Commons licenses:
+All images are sourced from Wikimedia Commons under their respective licenses:
 
-- Androgenetic Alopecia: CC BY-SA 4.0
-- Telogen Effluvium: CC BY-SA 4.0
-- Alopecia Areata: CC BY-SA 4.0
-- Traction Alopecia: CC BY-SA 4.0
-- Scarring Alopecia: CC BY-SA 4.0
+1. Androgenetic Alopecia - Male pattern baldness
+   Source: Wikimedia Commons
+   URL: https://commons.wikimedia.org/wiki/File:Male_pattern_baldness.jpg
 
-These images are used for educational purposes.
+2. Telogen Effluvium
+   Source: Wikimedia Commons
+   URL: https://commons.wikimedia.org/wiki/File:Telogen_effluvium.jpg
+
+3. Alopecia Areata
+   Source: Wikimedia Commons
+   URL: https://commons.wikimedia.org/wiki/File:Alopecia_areata.jpg
+
+4. Traction Alopecia
+   Source: Wikimedia Commons
+   URL: https://commons.wikimedia.org/wiki/File:Traction_alopecia.jpg
+
+5. Scarring Alopecia
+   Source: Wikimedia Commons
+   URL: https://commons.wikimedia.org/wiki/File:Scarring_alopecia.jpg
