@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hair Care Diagnostic & Treatment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --background-color: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--background-color);
+            color: var(--primary-color);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background: var(--primary-color);
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            color: white !important;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+            padding: 1rem;
+        }
+
+        .form-control, .form-select {
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+        }
+
+        .btn-primary {
+            background: var(--secondary-color);
+            border: none;
+            border-radius: 10px;
+            padding: 0.8rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .output-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .treatment-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .lab-recommendations {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .prescription-section {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            border: 2px solid #e9ecef;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .progress-bar {
+            height: 5px;
+            background: var(--secondary-color);
+            width: 0;
+            transition: width 0.3s ease;
+        }
+
+        .tab-content {
+            padding: 2rem 0;
+        }
+
+        .nav-tabs .nav-link {
+            color: var(--primary-color);
+            border: none;
+            padding: 1rem 2rem;
+            font-weight: 600;
+        }
+
+        .nav-tabs .nav-link.active {
+            color: var(--secondary-color);
+            border-bottom: 3px solid var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-user-md me-2"></i>
+                Hair Care Diagnostic & Treatment
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="progress-bar"></div>
+        
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="mb-0">Patient Information</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="diagnosticForm">
+                            <div class="mb-3">
+                                <label class="form-label">Patient Name</label>
+                                <input type="text" class="form-control" id="patientName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Age</label>
+                                <input type="number" class="form-control" id="patientAge" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Type of Hair Loss</label>
+                                <select class="form-select" id="hairType" required>
+                                    <option value="">Select type...</option>
+                                    <option value="androgenetic">Androgenetic Alopecia</option>
+                                    <option value="telogen">Telogen Effluvium</option>
+                                    <option value="alopeciaAreata">Alopecia Areata</option>
+                                    <option value="traction">Traction Alopecia</option>
+                                    <option value="scarring">Scarring Alopecia</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Contributing Factors</label>
+                                <textarea class="form-control" id="factors" rows="3" placeholder="e.g., Stress, Hormonal Imbalance, Vitamin Deficiency..."></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Duration of Hair Loss</label>
+                                <select class="form-select" id="duration">
+                                    <option value="">Select duration...</option>
+                                    <option value="acute">Less than 6 months</option>
+                                    <option value="chronic">6 months or more</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="mb-0">Quick Actions</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary" onclick="generateDiagnosis()">
+                                <i class="fas fa-stethoscope me-2"></i>Generate Diagnosis
+                            </button>
+                            <button class="btn btn-primary" onclick="generatePrescription()">
+                                <i class="fas fa-prescription me-2"></i>Generate Prescription
+                            </button>
+                            <button class="btn btn-primary" onclick="generateLabRecommendations()">
+                                <i class="fas fa-flask me-2"></i>Lab Recommendations
+                            </button>
+                            <button class="btn btn-primary" onclick="generatePDF()">
+                                <i class="fas fa-file-pdf me-2"></i>Generate PDF Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="output-section" id="outputSection" style="display: none;">
+            <ul class="nav nav-tabs" id="outputTabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="diagnosis-tab" data-bs-toggle="tab" href="#diagnosis" role="tab">Diagnosis</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="prescription-tab" data-bs-toggle="tab" href="#prescription" role="tab">Prescription</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="labs-tab" data-bs-toggle="tab" href="#labs" role="tab">Lab Recommendations</a>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="outputTabsContent">
+                <div class="tab-pane fade show active" id="diagnosis" role="tabpanel">
+                    <div id="diagnosisOutput"></div>
+                </div>
+                <div class="tab-pane fade" id="prescription" role="tabpanel">
+                    <div id="prescriptionOutput"></div>
+                </div>
+                <div class="tab-pane fade" id="labs" role="tabpanel">
+                    <div id="labsOutput"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        // Initialize progress bar
+        function updateProgress(step) {
+            const progressBar = document.querySelector('.progress-bar');
+            progressBar.style.width = `${step * 25}%`;
+        }
+
+        function generateDiagnosis() {
+            const patientName = document.getElementById('patientName').value;
+            const hairType = document.getElementById('hairType').value;
+            const factors = document.getElementById('factors').value;
+            const duration = document.getElementById('duration').value;
+
+            if (!patientName || !hairType) {
+                alert('Please fill in all required fields');
+                return;
+            }
+
+            const diagnosisOutput = document.getElementById('diagnosisOutput');
+            diagnosisOutput.innerHTML = `
+                <div class="treatment-card">
+                    <h5>Diagnosis Summary</h5>
+                    <p><strong>Patient:</strong> ${patientName}</p>
+                    <p><strong>Condition:</strong> ${hairType}</p>
+                    <p><strong>Duration:</strong> ${duration}</p>
+                    <p><strong>Contributing Factors:</strong> ${factors}</p>
+                </div>
+                <div class="treatment-card">
+                    <h5>Recommended Treatment Plan</h5>
+                    <p><strong>Topical Treatments:</strong></p>
+                    <ul>
+                        <li>Minoxidil 5% solution</li>
+                        <li>Growth factor serum</li>
+                        <li>Anti-inflammatory scalp treatment</li>
+                    </ul>
+                    <p><strong>Oral Supplements:</strong></p>
+                    <ul>
+                        <li>Biotin 5000mcg daily</li>
+                        <li>Zinc 50mg daily</li>
+                        <li>Vitamin D3 2000IU daily</li>
+                    </ul>
+                </div>
+            `;
+
+            document.getElementById('outputSection').style.display = 'block';
+            updateProgress(1);
+        }
+
+        function generatePrescription() {
+            const patientName = document.getElementById('patientName').value;
+            const prescriptionOutput = document.getElementById('prescriptionOutput');
+            
+            prescriptionOutput.innerHTML = `
+                <div class="prescription-section">
+                    <h5>Prescription</h5>
+                    <p><strong>Patient:</strong> ${patientName}</p>
+                    <p><strong>Date:</strong> ${new Date().toLocaleDateString()}</p>
+                    <hr>
+                    <div class="prescription-items">
+                        <p><strong>1. Minoxidil 5% Solution</strong></p>
+                        <p>Apply 1ml twice daily to affected areas</p>
+                        <p>Duration: 3 months</p>
+                        <hr>
+                        <p><strong>2. Growth Factor Serum</strong></p>
+                        <p>Apply 0.5ml once daily</p>
+                        <p>Duration: 3 months</p>
+                        <hr>
+                        <p><strong>3. Anti-inflammatory Scalp Treatment</strong></p>
+                        <p>Apply as needed, maximum 3 times weekly</p>
+                        <p>Duration: 2 months</p>
+                    </div>
+                </div>
+            `;
+
+            updateProgress(2);
+        }
+
+        function generateLabRecommendations() {
+            const labsOutput = document.getElementById('labsOutput');
+            
+            labsOutput.innerHTML = `
+                <div class="lab-recommendations">
+                    <h5>Recommended Laboratory Tests</h5>
+                    <div class="lab-tests">
+                        <p><strong>1. Hormone Panel</strong></p>
+                        <ul>
+                            <li>Testosterone (Total and Free)</li>
+                            <li>DHT (Dihydrotestosterone)</li>
+                            <li>Thyroid Function Tests</li>
+                        </ul>
+                        <p><strong>2. Vitamin and Mineral Panel</strong></p>
+                        <ul>
+                            <li>Vitamin D</li>
+                            <li>Ferritin</li>
+                            <li>Zinc</li>
+                        </ul>
+                        <p><strong>3. Complete Blood Count (CBC)</strong></p>
+                        <p><strong>4. Iron Studies</strong></p>
+                    </div>
+                </div>
+            `;
+
+            updateProgress(3);
+        }
+
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            // Add content to PDF
+            doc.setFontSize(20);
+            doc.text('Hair Care Diagnostic Report', 20, 20);
+            
+            doc.setFontSize(12);
+            doc.text(`Patient: ${document.getElementById('patientName').value}`, 20, 40);
+            doc.text(`Date: ${new Date().toLocaleDateString()}`, 20, 50);
+            
+            // Add diagnosis
+            doc.setFontSize(14);
+            doc.text('Diagnosis', 20, 70);
+            doc.setFontSize(12);
+            doc.text(`Hair Loss Type: ${document.getElementById('hairType').value}`, 20, 80);
+            doc.text(`Contributing Factors: ${document.getElementById('factors').value}`, 20, 90);
+            
+            // Add treatment plan
+            doc.setFontSize(14);
+            doc.text('Treatment Plan', 20, 110);
+            doc.setFontSize(12);
+            doc.text('1. Topical Treatments:', 20, 120);
+            doc.text('- Minoxidil 5% solution', 30, 130);
+            doc.text('- Growth factor serum', 30, 140);
+            doc.text('- Anti-inflammatory scalp treatment', 30, 150);
+            
+            // Save PDF
+            doc.save('hair-care-diagnostic-report.pdf');
+            
+            updateProgress(4);
+        }
+    </script>
+</body>
+</html>
