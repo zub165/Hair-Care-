@@ -1,89 +1,114 @@
-# Hair Care Diagnostic & Treatment Application
+# Hair Care Diagnostic & Treatment
 
-A web-based application designed to help users diagnose hair loss conditions and receive personalized treatment recommendations.
+A comprehensive web application for diagnosing hair loss conditions and providing personalized treatment recommendations.
 
 ## Features
 
-- Interactive hair loss type selection
-- Factor analysis for hair conditions
-- Treatment recommendations based on TrichoTest
+- Interactive selection of hair loss types
+- Factor analysis for hair loss conditions
+- Treatment recommendations based on TrichoTest results
 - Supplement suggestions
 - Hair follicle stage information
-- Comprehensive treatment options
+- Treatment options including PRP and transplants
+- PDF report generation
+- Lab recommendations
 
 ## Hair Loss Types Covered
 
-- Androgenetic Alopecia
-- Telogen Effluvium
-- Alopecia Areata
-- Traction Alopecia
-- Scarring Alopecia
+1. Androgenetic Alopecia
+   - Genetic hair loss
+   - Most common form
+   - Affects both men and women
+
+2. Telogen Effluvium
+   - Temporary hair loss
+   - Often triggered by stress or illness
+   - Reversible condition
+
+3. Alopecia Areata
+   - Autoimmune condition
+   - Patchy hair loss
+   - Can progress to total hair loss
+
+4. Traction Alopecia
+   - Caused by tight hairstyles
+   - Common in certain cultural practices
+   - Preventable condition
+
+5. Scarring Alopecia
+   - Permanent hair loss
+   - Caused by follicle destruction
+   - Requires early intervention
 
 ## Treatment Components
 
-### Topical Treatments
-- Spironolactone
-- Adenosine
-- L-Carnitine
-- Minoxidil
-- Growth factor serums
+1. Topical Treatments
+   - Minoxidil
+   - Finasteride
+   - Corticosteroids
+   - Growth factors
 
-### Oral Treatments
-- Minoxidil
-- MSM
-- Lysine
-- Finasteride
-- Dutasteride
+2. Oral Medications
+   - Finasteride
+   - Dutasteride
+   - Spironolactone
+   - Anti-inflammatory drugs
 
-### Supplements
-- Biotin
-- Zinc
-- Vitamin D
-- MSM
-- Saw Palmetto
-- IGF-1 Support (TrichoXidil/Igrantine-F1)
+3. Supplements
+   - Biotin
+   - Zinc
+   - Vitamin D
+   - Iron
+   - Saw Palmetto
 
-### Advanced Treatments
-- Platelet-Rich Plasma (PRP) Therapy
-- Low-Level Laser Therapy (LLLT)
-- Microneedling with Growth Factors
-- Hair Transplant (FUE/FUT)
-- Stem Cell Therapy
+4. Advanced Treatments
+   - PRP Therapy
+   - Low-Level Laser Therapy
+   - Hair Transplantation
+   - Light Therapy
 
 ## Hair Follicle Stages
 
-1. **Anagen (Growth Phase)**
-   - Boost with Minoxidil, Redensyl
-   
-2. **Catagen (Transition Phase)**
-   - Support with proper nutrition
-   
-3. **Telogen (Resting Phase)**
-   - Reduce triggers (stress, DHT)
-   
-4. **Exogen (Shedding Phase)**
-   - Reduce inflammation
+1. Anagen Phase
+   - Active growth phase
+   - 2-7 years duration
+   - Rapid cell division
 
-## Usage
+2. Catagen Phase
+   - Transition phase
+   - 2-3 weeks duration
+   - Growth stops
 
-1. Select your hair loss type from the dropdown menu
-2. Enter any contributing factors in the text area
-3. Click "Generate Summary" to receive personalized recommendations
-4. Review the comprehensive treatment plan
+3. Telogen Phase
+   - Resting phase
+   - 2-3 months duration
+   - Hair preparation for shedding
+
+4. Exogen Phase
+   - Shedding phase
+   - Variable duration
+   - Natural hair loss
+
+## Usage Instructions
+
+1. Enter patient information
+2. Select hair loss type
+3. Choose duration
+4. Select additional symptoms
+5. Generate diagnosis
+6. View treatment recommendations
+7. Generate prescription
+8. Get lab recommendations
+9. Download PDF report
 
 ## Technical Details
 
-- Built with HTML, CSS, and JavaScript
-- Responsive design for all devices
-- Modern UI with clean interface
-- Client-side processing for immediate results
+- Built with HTML5, CSS3, and JavaScript
+- Uses Bootstrap 5 for responsive design
+- Font Awesome icons for visual elements
+- jsPDF for PDF generation
+- Modern, user-friendly interface
 
-## Getting Started
+## Medical Disclaimer
 
-1. Clone the repository
-2. Open `index.html` in a web browser
-3. Start using the application
-
-## Note
-
-This application provides general information and recommendations. Always consult with a healthcare professional for personalized medical advice and treatment plans. 
+This application is for informational purposes only and should not be used as a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified healthcare provider with any questions you may have regarding a medical condition. 

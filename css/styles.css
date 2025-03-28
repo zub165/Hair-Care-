@@ -1,0 +1,285 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --background-color: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--background-color);
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+.navbar {
+    background: var(--primary-color);
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    color: white !important;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    background: var(--secondary-color);
+    color: white;
+    border-radius: 15px 15px 0 0 !important;
+    padding: 1rem;
+}
+
+.form-control, .form-select {
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+.btn-primary {
+    background: var(--secondary-color);
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+.output-section {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.treatment-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.lab-recommendations {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.prescription-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    border: 2px solid #e9ecef;
+}
+
+.symptom-list {
+    list-style: none;
+    padding: 0;
+}
+
+.symptom-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.symptom-list li:last-child {
+    border-bottom: none;
+}
+
+.treatment-details {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.hair-cycle-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #e9ecef;
+}
+
+.hair-cycle-card h5 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    height: 5px;
+    background: var(--secondary-color);
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.tab-content {
+    padding: 2rem 0;
+}
+
+.nav-tabs .nav-link {
+    color: var(--primary-color);
+    border: none;
+    padding: 1rem 2rem;
+    font-weight: 600;
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--secondary-color);
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+.info-icon {
+    color: var(--secondary-color);
+    margin-left: 0.5rem;
+    cursor: help;
+}
+
+.treatment-type {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.treatment-type h6 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.prevention-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #e9ecef;
+}
+
+.prevention-card h5 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.prevention-list {
+    list-style: none;
+    padding: 0;
+}
+
+.prevention-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.prevention-list li:last-child {
+    border-bottom: none;
+}
+
+.prevention-list li i {
+    color: var(--secondary-color);
+    margin-right: 0.5rem;
+}
+
+.procedure-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #e9ecef;
+}
+
+.procedure-card h5 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.cause-list {
+    list-style: none;
+    padding: 0;
+}
+
+.cause-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.cause-list li:last-child {
+    border-bottom: none;
+}
+
+.cause-list li i {
+    color: var(--accent-color);
+    margin-right: 0.5rem;
+}
+
+.lifestyle-recommendations {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #e9ecef;
+}
+
+.lifestyle-recommendations h5 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.lifestyle-list {
+    list-style: none;
+    padding: 0;
+}
+
+.lifestyle-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.lifestyle-list li:last-child {
+    border-bottom: none;
+}
+
+.lifestyle-list li i {
+    color: var(--secondary-color);
+    margin-right: 0.5rem;
+} 
