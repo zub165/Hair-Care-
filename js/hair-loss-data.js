@@ -3,6 +3,7 @@ const hairLossData = {
         androgenetic: {
             name: "Androgenetic Alopecia",
             description: "Genetic hair loss condition affecting both men and women, characterized by progressive thinning of hair in a specific pattern. Most common form of hair loss, affecting approximately 50% of men and 40% of women by age 50.",
+            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2Y4ZjlmYSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IiM2Yzc1N2QiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5BbmRyb2dlbmV0aWMgQWxvcGVjaWE8L3RleHQ+PC9zdmc+",
             symptoms: [
                 "Gradual thinning of hair",
                 "Receding hairline in men",
@@ -25,47 +26,54 @@ const hairLossData = {
                         name: "Minoxidil 5%",
                         dosage: "1ml twice daily",
                         duration: "Long-term",
-                        notes: "FDA approved for both men and women"
+                        notes: "FDA approved for both men and women, can be combined with other treatments"
                     },
                     {
-                        name: "Topical Finasteride",
-                        dosage: "0.1% solution once daily",
+                        name: "Topical Finasteride 0.1%",
+                        dosage: "1ml once daily",
                         duration: "Long-term",
-                        notes: "Off-label use, consult physician"
+                        notes: "Emerging evidence for efficacy with reduced systemic absorption"
                     },
                     {
-                        name: "Topical Spironolactone",
-                        dosage: "5% solution once daily",
+                        name: "Topical Cetirizine 1%",
+                        dosage: "Once daily",
                         duration: "Long-term",
-                        notes: "Off-label use, primarily for women"
+                        notes: "Anti-inflammatory effects via prostaglandin D2 inhibition"
                     }
                 ],
                 oral: [
                     {
-                        name: "Finasteride",
-                        dosage: "1mg daily",
-                        duration: "Long-term",
-                        notes: "FDA approved for men only"
-                    },
-                    {
                         name: "Dutasteride",
                         dosage: "0.5mg daily",
                         duration: "Long-term",
-                        notes: "Off-label use, stronger than Finasteride"
+                        notes: "More efficacious than finasteride for male AGA"
                     },
                     {
-                        name: "Spironolactone",
-                        dosage: "100-200mg daily",
+                        name: "Finasteride",
+                        dosage: "1mg daily",
                         duration: "Long-term",
-                        notes: "For women only, requires monitoring"
+                        notes: "FDA approved for men, may be used in post-menopausal women"
+                    },
+                    {
+                        name: "Low-dose Oral Minoxidil",
+                        dosage: "0.25-2.5mg daily",
+                        duration: "Long-term",
+                        notes: "Emerging evidence for safety and efficacy"
+                    }
+                ],
+                combination: [
+                    {
+                        name: "PRP + Minoxidil",
+                        frequency: "PRP monthly for 3-4 months + daily minoxidil",
+                        notes: "Synergistic effects shown in clinical studies"
+                    },
+                    {
+                        name: "Low-dose Oral Minoxidil + Spironolactone",
+                        dosage: "0.25mg + 25mg daily",
+                        notes: "Effective combination for female pattern hair loss"
                     }
                 ],
                 supplements: [
-                    {
-                        name: "Saw Palmetto",
-                        dosage: "320mg daily",
-                        notes: "Natural DHT inhibitor"
-                    },
                     {
                         name: "Biotin",
                         dosage: "5000mcg daily",
@@ -94,11 +102,36 @@ const hairLossData = {
                         notes: "Surgical option for advanced cases"
                     }
                 ]
+            },
+            classification: {
+                female: {
+                    name: "Sinclair's Classification",
+                    stages: ["Grade 1", "Grade 2", "Grade 3", "Grade 4", "Grade 5"],
+                    description: "Five-grade visual scale assessing midline hair density based on the width of hair part"
+                },
+                male: {
+                    name: "Hamilton-Norwood Classification",
+                    stages: ["Type I", "Type II", "Type III", "Type IIIa", "Type IIIv", "Type IV", "Type V", "Type Va", "Type VI", "Type VII"],
+                    description: "Progressive pattern of hair loss from frontal hairline and vertex"
+                },
+                asian: {
+                    name: "BASP Classification",
+                    types: {
+                        basic: ["L (Linear)", "M (Middle)", "C (Curved)", "U (Undetermined)"],
+                        specific: ["V (Vertex)", "F (Frontal)"],
+                    },
+                    description: "Specific classification for Asian hair loss patterns considering both hairline shape and density"
+                }
+            },
+            clinicalImages: {
+                microscopic: "Miniaturization of hair follicles visible under trichoscopy",
+                macroscopic: "Visible thinning pattern following Ludwig's or Hamilton-Norwood scale"
             }
         },
         telogen: {
             name: "Telogen Effluvium",
             description: "Temporary hair loss condition where hair prematurely enters the telogen (resting) phase. Often triggered by stress, illness, or hormonal changes.",
+            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2Y4ZjlmYSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IiM2Yzc1N2QiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5UZWxvZ2VuIEVmZmx1dml1bTwvdGV4dD48L3N2Zz4=",
             symptoms: [
                 "Sudden increase in hair shedding",
                 "Diffuse thinning",
@@ -173,11 +206,42 @@ const hairLossData = {
                         ]
                     }
                 ]
+            },
+            classification: {
+                types: [
+                    {
+                        name: "Acute Telogen Effluvium",
+                        duration: "Less than 6 months",
+                        characteristics: ["Sudden onset", "Clear triggering event", "Reversible"]
+                    },
+                    {
+                        name: "Chronic Telogen Effluvium",
+                        duration: "More than 6 months",
+                        characteristics: ["Idiopathic", "Fluctuating course", "No clear trigger"]
+                    },
+                    {
+                        name: "Chronic Diffuse Telogen Hair Loss",
+                        duration: "Prolonged",
+                        characteristics: ["Associated with systemic conditions", "Requires underlying treatment"]
+                    }
+                ],
+                pathomechanism: [
+                    "Immediate anagen release",
+                    "Delayed anagen release",
+                    "Short anagen syndrome",
+                    "Immediate telogen release",
+                    "Delayed telogen release"
+                ]
+            },
+            clinicalImages: {
+                microscopic: "Increased telogen phase hairs visible in trichoscopy",
+                macroscopic: "Diffuse thinning across scalp"
             }
         },
         alopeciaAreata: {
             name: "Alopecia Areata",
             description: "Autoimmune condition causing patchy hair loss. Can progress to total scalp hair loss (alopecia totalis) or complete body hair loss (alopecia universalis).",
+            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2Y4ZjlmYSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IiM2Yzc1N2QiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5BbG9wZWNpYSBBcmVhdGE8L3RleHQ+PC9zdmc+",
             symptoms: [
                 "Round or oval patches of hair loss",
                 "Smooth scalp in affected areas",
@@ -247,11 +311,41 @@ const hairLossData = {
                         notes: "UVB or PUVA therapy"
                     }
                 ]
+            },
+            classification: {
+                severity: {
+                    name: "SALT Score",
+                    stages: [
+                        "S0 (No hair loss)",
+                        "S1 (<25% hair loss)",
+                        "S2 (25-49% hair loss)", 
+                        "S3 (50-74% hair loss)",
+                        "S4 (75-99% hair loss)",
+                        "S5 (100% hair loss)"
+                    ],
+                    description: "Standardized assessment of scalp hair loss percentage"
+                },
+                practical: {
+                    name: "AA Severity Scale",
+                    stages: [
+                        "Mild (≤20% scalp hair loss)",
+                        "Moderate (21-49% hair loss)",
+                        "Severe (50-100% hair loss)"
+                    ],
+                    modifiers: [
+                        "Psychosocial impact",
+                        "Eyebrow/eyelash involvement",
+                        "Poor treatment response",
+                        "Rapidly progressive"
+                    ],
+                    description: "Practical classification incorporating clinical and quality of life factors"
+                }
             }
         },
         traction: {
             name: "Traction Alopecia",
             description: "Hair loss caused by prolonged tension on hair follicles, often due to tight hairstyles or hair extensions.",
+            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2Y4ZjlmYSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IiM2Yzc1N2QiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5UcmFjdGlvbiBBbG9wZWNpYTwvdGV4dD48L3N2Zz4=",
             symptoms: [
                 "Hair loss along hairline",
                 "Pain or tenderness in affected areas",
@@ -291,6 +385,7 @@ const hairLossData = {
         scarring: {
             name: "Scarring Alopecia",
             description: "Permanent hair loss caused by destruction of hair follicles and replacement with scar tissue.",
+            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2Y4ZjlmYSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IiM2Yzc1N2QiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5TY2FycmluZyBBbG9wZWNpYTwvdGV4dD48L3N2Zz4=",
             symptoms: [
                 "Permanent hair loss",
                 "Shiny or smooth scalp",
@@ -365,37 +460,36 @@ const hairLossData = {
     },
     hairCycle: {
         anagen: {
-            name: "Anagen Phase",
-            description: "Active growth phase where hair cells divide rapidly",
+            name: "Anagen (Growth Phase)",
+            description: "Active growth phase where hair follicle is producing new hair fiber",
             duration: "2-7 years",
+            image: "data:image/svg+xml;base64,[SVG_DATA_FOR_ANAGEN]",
             treatments: [
-                "Minoxidil",
-                "Growth factors",
-                "PRP therapy",
-                "Laser therapy",
-                "Nutritional support"
+                "Promote healthy growth environment",
+                "Provide essential nutrients",
+                "Protect from damage"
             ]
         },
         catagen: {
-            name: "Catagen Phase",
-            description: "Transition phase where hair growth stops",
+            name: "Catagen (Regression Phase)",
+            description: "Transitional phase where hair growth stops",
             duration: "2-3 weeks",
+            image: "data:image/svg+xml;base64,[SVG_DATA_FOR_CATAGEN]",
             treatments: [
-                "Nutritional support",
-                "Stress management",
-                "Scalp massage",
-                "Anti-inflammatory care"
+                "Minimize stress factors",
+                "Support follicle health",
+                "Maintain scalp condition"
             ]
         },
         telogen: {
-            name: "Telogen Phase",
-            description: "Resting phase before hair falls out",
+            name: "Telogen (Resting Phase)",
+            description: "Resting phase where old hair is released and new hair begins to form",
             duration: "2-3 months",
+            image: "data:image/svg+xml;base64,[SVG_DATA_FOR_TELOGEN]",
             treatments: [
-                "Reduce triggers",
-                "Anti-inflammatory treatments",
-                "Stress management",
-                "Nutritional support"
+                "Support new growth",
+                "Maintain scalp health",
+                "Prevent premature shedding"
             ]
         },
         exogen: {
@@ -436,6 +530,97 @@ const hairLossData = {
         ]
     },
     trichoTest: {
+        description: "Microscopic analysis of hair follicles and scalp",
+        trichoscopyFindings: {
+            general: {
+                hairShaft: [
+                    "Pohl-Pinkus constrictions",
+                    "Coudability hair (tapered)",
+                    "Broken hairs",
+                    "Exclamation mark hairs"
+                ],
+                follicle: [
+                    "Black dots",
+                    "Yellow dots",
+                    "Short vellus hairs",
+                    "Pigtail hairs"
+                ],
+                scalp: [
+                    "Peripilar sign",
+                    "Focal atrichia",
+                    "Perifollicular erythema",
+                    "Perifollicular scales"
+                ]
+            },
+            diseaseSpecific: {
+                androgenetic: [
+                    "Hair diameter diversity >20%",
+                    "Increased proportion of thin hairs",
+                    "Peripilar signs",
+                    "Yellow dots (less prominent)"
+                ],
+                alopeciaAreata: [
+                    "Black dots",
+                    "Yellow dots (prominent)",
+                    "Broken hairs",
+                    "Exclamation mark hairs",
+                    "Short vellus hairs",
+                    "Coudability hairs"
+                ],
+                telogen: [
+                    "Increased proportion of telogen hairs",
+                    "Empty follicles",
+                    "Short regrowing hairs",
+                    "No inflammation signs"
+                ],
+                scarring: [
+                    "Loss of follicular openings",
+                    "Perifollicular erythema",
+                    "Perifollicular scaling",
+                    "White patches",
+                    "Follicular keratotic plugs"
+                ]
+            }
+        },
+        diagnosticCriteria: {
+            ffa: {
+                name: "International FFA Cooperative Group Criteria",
+                majorCriteria: [
+                    "Cicatricial alopecia of frontotemporal hairline",
+                    "Bilateral eyebrow loss",
+                    "Perifollicular erythema",
+                    "Lonely hair sign",
+                    "Follicular hyperkeratosis"
+                ],
+                scoring: "≥4/7 points needed for classic FFA diagnosis"
+            },
+            fapd: {
+                name: "FAPD Diagnostic Criteria",
+                majorCriteria: [
+                    "Hair loss in AGA pattern",
+                    "Perifollicular erythema",
+                    "Perifollicular scaling",
+                    "Positive pull test in affected areas",
+                    "Histopathologic features of LPP",
+                    "Loss of follicular ostia",
+                    "Symptoms (itch, burn, pain)"
+                ],
+                minorCriteria: [
+                    "Family history of AGA",
+                    "Personal history of LPP",
+                    "Positive ANA",
+                    "Associated autoimmune disease",
+                    "Keratosis pilaris",
+                    "Mucosal LP"
+                ]
+            }
+        },
+        findings: {
+            normal: "Regular hair shaft diameter and structure",
+            androgenetic: "Miniaturized follicles with reduced diameter",
+            telogen: "Increased percentage of telogen phase hairs",
+            traction: "Broken hair shafts and inflammation"
+        },
         geneticMarkers: {
             androgenetic: {
                 markers: ["AR", "SRD5A2", "ESR1", "ESR2"],

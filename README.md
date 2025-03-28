@@ -1,17 +1,89 @@
-# Hair Care Diagnostic & Treatment
+# Hair Care Diagnostic & Treatment Application
 
-A comprehensive web application for diagnosing hair loss conditions and providing personalized treatment recommendations.
+A comprehensive web application for diagnosing and treating various types of hair loss conditions. This application provides medical professionals with tools to generate diagnoses, prescriptions, and laboratory recommendations.
 
 ## Features
 
-- Interactive selection of hair loss types
-- Factor analysis for hair loss conditions
-- Treatment recommendations based on TrichoTest results
-- Supplement suggestions
-- Hair follicle stage information
-- Treatment options including PRP and transplants
-- PDF report generation
-- Lab recommendations
+- **Comprehensive Diagnosis**: Analyze different types of hair loss conditions
+- **Prescription Generation**: Create detailed medical prescriptions
+- **Lab Test Recommendations**: Generate relevant laboratory test recommendations
+- **PDF Report Generation**: Create downloadable PDF reports
+- **Dark Mode Support**: Toggle between light and dark themes
+- **Responsive Design**: Works seamlessly on all devices
+- **Progress Tracking**: Visual progress indicators
+- **Recent Activity Log**: Track user actions
+- **Form Auto-save**: Save form data as draft
+
+## Technologies Used
+
+- HTML5
+- CSS3 with modern features
+- JavaScript (ES6+)
+- Bootstrap 5
+- Font Awesome Icons
+- jsPDF for PDF generation
+
+## Getting Started
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/hair-care-diagnostic.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd hair-care-diagnostic
+   ```
+
+3. Open the project:
+   - For development: Use a local server (e.g., Live Server in VS Code)
+   - For production: Deploy to any static hosting service
+
+## Deployment
+
+You can deploy this application to any static hosting service. Here are some options:
+
+### GitHub Pages
+1. Go to your repository settings
+2. Navigate to "Pages"
+3. Select your main branch as the source
+4. Save the changes
+
+### Netlify
+1. Connect your GitHub repository
+2. Select the main branch
+3. Deploy automatically
+
+### Vercel
+1. Import your GitHub repository
+2. Configure build settings (not required for static sites)
+3. Deploy
+
+## Usage
+
+1. Fill in patient information
+2. Select the type of hair loss
+3. Add relevant symptoms
+4. Generate diagnosis, prescription, or lab recommendations
+5. Download PDF reports as needed
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Hair loss classification systems and medical information based on current medical research
+- Icons provided by Font Awesome
+- UI components powered by Bootstrap 5
 
 ## Hair Loss Types Covered
 
